@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace TaskManagement.API.Models
+﻿namespace TaskManagement.API.DTOs
 {
-    public class User
+    public class UserResponseDto
     {
-        [Key]
         public int Id { get; set; }
 
         public string Username { get; set; } = string.Empty;
@@ -14,10 +11,5 @@ namespace TaskManagement.API.Models
         public string PasswordHash { get; set; } = string.Empty;
 
         public DateTime createdAt { get; set; } = DateTime.UtcNow;
-
-
-        //Navigation Property
-
-        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     }
 }
