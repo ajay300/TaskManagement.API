@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.API.Data;
+using TaskManagement.API.Services;
 
 namespace TaskManagement.API
 {
@@ -12,6 +13,8 @@ namespace TaskManagement.API
 
 
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+            builder.Services.AddScoped<IAuthService, AuthService>();
 
             // Add services to the container.
 
